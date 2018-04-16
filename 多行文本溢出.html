@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>多行文本溢出的问题</title>
+    <style>
+        div.test
+        {
+            white-space:nowrap;
+            width:12em;
+            overflow:hidden;
+            border:1px solid #000000;
+        }
+    </style>
 </head>
 <body>
 <!--#文本溢出问题(版本升级) 多行文本 ... 通常情况下会采用如下方案：
@@ -20,5 +29,9 @@ module.exports = { plugins: // [autoprefixer({ browsers: ['last 2 versions'] })]
 .browserslistrc.js
 defaults
 Safari 6
+<div class="test" style="text-overflow:ellipsis;">This is some long text that will not fit in the box</div>
+<div class="test" style="text-overflow:clip;">This is some long text that will not fit in the box</div>
+<div class="test" style="text-overflow:'>>';">This is some long text that will not fit in the box</div>
+</body>
 </body>
 </html>
